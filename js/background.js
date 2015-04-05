@@ -1,3 +1,9 @@
+function check(){
+	var bt=document.getElementById("bt");
+	var key=event.keyCode;
+	if(key==13)
+	bt.click();
+}
 function resume()
 {
 
