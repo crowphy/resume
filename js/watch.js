@@ -8,7 +8,7 @@ window.addEventListener("load",function(){
 	canvas.width=$(window).width();
 	canvas.height=$(window).height();
     cw=parseInt(canvas.width/4);
-    ch=parseInt(canvas.height/4)-40;
+    ch=parseInt(canvas.height/4)-30;
     console.log(canvas.width)
     cxt.translate(cw/2+10,ch/2+10);
     drawWatch();
@@ -19,8 +19,8 @@ window.addEventListener("load",function(){
         cxt.clearRect(-cw / 2,- ch / 2-20,cw+20,ch+20);
         var len=Math.min(cw,ch)/2;
         var len1=0.85*len;
-        cxt.font="15px Helvetica normal";
-        cxt.fillStyle="#5E82FF";
+        cxt.font="italic 100 12px/20px arial,sans-serif";
+        cxt.fillStyle="#FFF3E4";
         cxt.textAlign="center";
         cxt.textBaseline="middle";
         for(var i=0;i<12;i++){
@@ -52,7 +52,7 @@ window.addEventListener("load",function(){
         var sColor="#E9296C";
         drawHand(cxt,sAngle,sLen,sWidth,sColor);
 
-        setTimeout(drawWatch,1000);
+        setTimeout(drawWatch,500);
     }
 
     function drawHand(cxt,angle,length,width,color){

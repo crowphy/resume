@@ -63,8 +63,9 @@ window.onload=function(){
     {
     	cxt.save();
 	    var skyColor=cxt.createLinearGradient(0,canvas.height,0,0);
-	    skyColor.addColorStop(0,'#035');
-	    skyColor.addColorStop(1,'#000000');
+	    skyColor.addColorStop(1,'rgba(52,30,80,1)');
+        skyColor.addColorStop(0.4,'rgba(53,63,120,0.8)');
+	    skyColor.addColorStop(0,'rgba(108,77,94,1)');
 	    cxt.fillStyle=skyColor;
 	    cxt.fillStyle=skyColor;
 	    cxt.fillRect(0,0,canvas.width,canvas.height);

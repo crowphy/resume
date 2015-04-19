@@ -1,12 +1,16 @@
 #menu { 
 	position: fixed; 
-	right: 20px; 
-	top: 50%; 
+	right: 30px; 
+	top: 54%; 
 	width: 90px; 
 	margin: -160px 0 0; 
-	padding: 0; 
+	#padding: 0; 
 	list-style-type: none; 
 	z-index: 70;
+	opacity: 0.7;
+}
+#menu a:hover{
+	color: #2BE8E9;
 }
 #menu li {
  margin-top: 10px; 
@@ -28,6 +32,44 @@
 	#text-align: center; 
     font-family:"Microsoft Yahei";
 	color: #fff;
+}
+.sec1{
+	background-image:linear-gradient(to bottom, 
+			rgba(52,30,80,1) 0%, 
+			rgba(153,63,120,0.8) 55%,  
+			rgba(218,77,94,1) 100%);
+
+}
+.sec2{
+	background-image:linear-gradient(to bottom, 
+			rgba(108,199,213,1) 0%, 
+			rgba(224,231,288,0.61) 55%,  
+			rgba(241,229,217,1) 100%);
+}
+.sec3{
+	background-image:linear-gradient(to bottom, 
+			rgba(148,92,122,1) 0%, 
+			rgba(230,127,102,1) 55%,  
+			rgba(243,96,55,1) 100%);
+}
+.sec4{
+	background-image:linear-gradient(to bottom, 
+			rgba(148,199,213,1) 0%, 
+			rgba(224,231,218,1) 55%,  
+			rgba(241,229,217,1) 100%);
+			
+}
+.sec5{
+	background-image:linear-gradient(to bottom, 
+			rgba(14,130,132,1) 0%, 
+			rgba(131,184,170,1) 55%,  
+			rgba(215,183,149,1) 100%);
+}
+.sec6{
+	background-image:linear-gradient(to bottom, 
+			rgba(0,105,93,1) 0%, 
+			rgba(18,195,143,0.8) 55%,  
+			rgba(200,200,54,1) 100%);
 }
 .screen-main { 
 	position: relative; 
@@ -110,7 +152,7 @@
 	width: 240px;
 	height: 320px;
 	#background-color: #0080FF;
-	margin-left: 140px;
+	margin-left: 120px;
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
@@ -161,7 +203,7 @@
 	color: #FFFFFF;
 }
 .end_word{
-	font: 30px "Microsoft Yahei";
+	font: 28px "Microsoft Yahei";
 	margin-left: 100px;
 	position: absolute;
 	margin-top: -70px;
