@@ -18,15 +18,46 @@ else
 	alert("密码错误！")
 }
 }
+
+
+var canvas,cxt;
+
+var w;
+var h;
+
+var starPic = new Image();
+
+var stars = [];
+var num = 50;
+
 window.onload=function(){
-	var canvas=document.getElementById("background");
-	var context=canvas.getContext("2d");
+	canvas=document.getElementById("background");
+	cxt=canvas.getContext("2d");
+
+    
 	canvas.width=$(window).width();
 	canvas.height=$(window).height();
+    w=canvas.width;
+    h=canvas.height;
 
-    drawSky(context);
-    fillMoon(context,2,1000,100,60,20);
-    drawLand(context);
+    starPic.src = "images/star.png";
+    //console.log(starPic);
+    for (var i = 0; i < num; i++) {
+        stars[i] = new star();
+        stars[i].init();
+    }
+
+    
+
+    gameLoop();
+    
+    function gameLoop() {
+        window.setTimeout(gameLoop,100);
+        drawSky(cxt);
+        fillMoon(cxt,2,1000,100,60,20);
+        drawLand(cxt);
+        drawStars();
+    }
     
     function drawSky(cxt)
     {
@@ -39,15 +70,20 @@ window.onload=function(){
 	    cxt.fillRect(0,0,canvas.width,canvas.height);
 	    cxt.restore();
     }
+    /*
+    function drawStars(){
+        
+        for(var i=0;i<80;i++)
+        {
+            var x=Math.random()*canvas.width;
+            var y=Math.random()*canvas.height-0.4*canvas.height;
+        	var outerR=Math.random()*4+5;
+        	var innerR=0.5*outerR;
+        	var rot=Math.random()*360;
+        	drawStar(context,x,y,outerR,innerR,rot);
+        }
+        
 
-    for(var i=0;i<100;i++)
-    {
-        var x=Math.random()*canvas.width;
-        var y=Math.random()*canvas.height-0.4*canvas.height;
-    	var outerR=Math.random()*4+5;
-    	var innerR=0.5*outerR;
-    	var rot=Math.random()*360;
-    	drawStar(context,x,y,outerR,innerR,rot);
     }
     function drawStar(cxt,x,y,outerR,innerR,rot)
     {   
@@ -59,13 +95,16 @@ window.onload=function(){
     		cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*innerR+x,-Math.sin((54+i*72-rot)/180*Math.PI)*innerR+y);
     	}
     	cxt.closePath();
+        
+        
     	cxt.fillStyle="#FFFF00";
     	cxt.strokeStyle="#FFFF80";
     	cxt.stroke();
     	cxt.fill();
         cxt.restore();
-
+        //window.requestAnimationFrame(drawStar);
     }
+    */
     function fillMoon(cxt,d,x,y,R,rot)
     {
     	cxt.save();
@@ -106,5 +145,5 @@ window.onload=function(){
     	cxt.fill();
     	cxt.restore();
     }
+} 
 
-}

@@ -46,7 +46,12 @@
 	font-size: 25px;
 	display: none;
 }
-
+#watch{
+	position: fixed;
+	margin-top: 20px;
+	margin-left: 1050px;
+	z-index: 1;
+}
 .basic{
 	font:30px "Microsoft Yahei"; 
 	list-style-type:none;
