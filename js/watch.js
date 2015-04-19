@@ -5,8 +5,8 @@ var cw,ch;
 window.addEventListener("load",function(){
 	var canvas=document.getElementById("watch");
 	cxt=canvas.getContext("2d");
-	canvas.width=$(window).width()-100;
-	canvas.height=$(window).height()-100;
+	canvas.width=$(window).width();
+	canvas.height=$(window).height();
     cw=parseInt(canvas.width/4);
     ch=parseInt(canvas.height/4)-40;
     console.log(canvas.width)
