@@ -7,8 +7,8 @@ window.addEventListener("load",function(){
 	cxt=canvas.getContext("2d");
 	canvas.width=$(window).width()-100;
 	canvas.height=$(window).height()-100;
-    cw=parseInt(canvas.width/4)-60;
-    ch=parseInt(canvas.height/4);
+    cw=parseInt(canvas.width/4);
+    ch=parseInt(canvas.height/4)-40;
     console.log(canvas.width)
     cxt.translate(cw/2+10,ch/2+10);
     drawWatch();
@@ -19,7 +19,7 @@ window.addEventListener("load",function(){
         cxt.clearRect(-cw / 2,- ch / 2-20,cw+20,ch+20);
         var len=Math.min(cw,ch)/2;
         var len1=0.85*len;
-        cxt.font="20px Helvetica normal";
+        cxt.font="15px Helvetica normal";
         cxt.fillStyle="#5E82FF";
         cxt.textAlign="center";
         cxt.textBaseline="middle";
