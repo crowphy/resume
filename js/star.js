@@ -11,7 +11,6 @@ star.prototype.init=function(){
 star.prototype.update=function(){
 	this.picNo++;
 	this.picNo%=7;
-	console.log(this.picNo);
 }
 star.prototype.draw=function(){
 	cxt.drawImage(starPic,this.picNo*7,0,7,7,this.x, this.y,7,7);

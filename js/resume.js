@@ -91,6 +91,7 @@ $(document).ready(function() {
 
 
 var canvas,cxt,w,h;
+var j=-1;
 window.onload=function(){
 	canvas=document.getElementById("circle");
 	cxt=canvas.getContext("2d");
@@ -100,11 +101,18 @@ window.onload=function(){
 	w=canvas.width;
 	h=canvas.height;
 	//cxt.translate(w/2+10,h/2+10);
-    drawRing(cxt);
-    drawCircle(cxt);
-    drawWatch();
+	loop();
+	
+	function loop(){
+	    
+	    drawRing();
+	    drawCircle();
+	    
+	    setTimeout(loop,3000);
+    }
 
-	function drawCircle(cxt)
+
+	function drawCircle()
 	{
 		var fillColor="#FF0080";
 		cxt.beginPath();
@@ -115,76 +123,36 @@ window.onload=function(){
 		cxt.stroke();
 		cxt.fill();
 	}
-	function drawRing(cxt){
-		var color=["#A74FFF","#FF8C55","#FEDD23","#A0FF53","#3997FF"];
+	function drawRing(){
+		
+		var k=0;
+		var t=0;
+		t++;
+		cxt.clearRect(0,0,1000,800);
+		var color=["#A74FFF","#FF8C55","#FEDD23","#A0FF53","#3997FF","#FF8C55"];
 		for(var i=0;i<5;i++){
 			//var fillColor="#8080FF";
-			cxt.save();
+			j=j+1;
+			
+			k=(j)%6;
+
+			//cxt.save();
 	        cxt.beginPath();
 	        cxt.moveTo(650,300);
 	        cxt.lineTo(650+Math.cos((18+72*i)/180*Math.PI)*250,300-Math.sin((18+72*i)/180*Math.PI)*250);
             cxt.arc(650,300,250,(1.9-0.4*i)*Math.PI,(1.5-0.4*i)*Math.PI,true);
             cxt.lineTo(650,300);
 			cxt.closePath();
-			cxt.strokeStyle=color[i];
-			cxt.fillStyle=color[i];
+			//cxt.strokeStyle=color[k];
+			cxt.fillStyle=color[k];
 			cxt.stroke();
 			cxt.fill();            
-			cxt.restore();			
-		}
+			//cxt.restore();
+			console.log(color[k]+' '+(j))
 
+		}
+		console.log("----------")
 	}
 
-	function drawWatch(){
-
-        cxt.clearRect(-w / 2,- h / 2,w,h);
-        var len=Math.min(w,h)/2;
-        var len1=0.85*len;
-        cxt.font="30px Georgia";
-        cxt.fillStyle="black";
-        cxt.textAlign="center";
-        cxt.textBaseline="middle";
-        for(var i=0;i<12;i++){
-            var tag1=Math.PI*2*(3-i)/12;
-            var tx=len*Math.cos(tag1);
-            var ty=-len*Math.sin(tag1);
-            cxt.fillText(i,tx,ty);
-        }
-        var d=new Date();
-        var h=d.getHours();
-        var m=d.getMinutes();
-        var s=d.getSeconds();
-        if(h>12)h=h-12;
-        var hAngle=Math.PI*2*(3-(h+m/60))/12;
-        var hLen=0.5*len;
-        var hWidth=4;
-        var hColor="black";
-        drawHand(cxt,hAngle,hLen,hWidth,hColor);
-
-        var mAngle=Math.PI*2*(15-(m+s/60))/60;
-        var mLen=0.7*len;
-        var mWidth=3;
-        var mColor="black";
-        drawHand(cxt,mAngle,mLen,mWidth,mColor);
-
-        var sAngle=Math.PI*2*(15-s)/60;
-        var sLen=0.8*len;
-        var sWidth=1;
-        var sColor="#CC0033";
-        drawHand(cxt,sAngle,sLen,sWidth,sColor);
-
-        setTimeout(drawWatch,1000);
-    }
-
-    function drawHand(cxt,angle,length,width,color){
-        var x=length*Math.cos(angle);
-        var y=-length*Math.sin(angle);
-        cxt.strokeStyle=color;
-        cxt.lineWidth=width;
-        cxt.lineCap="round";
-        cxt.beginPath();
-        cxt.moveTo(0,0);
-        cxt.lineTo(x,y);
-        cxt.stroke();
-    }		
+		
 }

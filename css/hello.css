@@ -1,18 +1,21 @@
 .confirm{
-	text-align: center;
+	
 	margin-top: 250px;
 	float: center;
 	z-index: 10;
-	position:fixed;
-	margin-left: 500px;
+	position:absolute;
+	margin-left: 520px;
+	
 }
 .title{
 	margin-left: -100px;
 
 }
-#password{
-	min-height: 40px;
+.user{
+	min-height: 35px;
 	min-width: 200px;
+	margin-bottom:15px;
+	color: black;
 }
 #background{
 	z-index: 1;
@@ -27,4 +30,17 @@
 	position: fixed;
 	left: 400px;
 	top:-500px;
+}
+span{
+	color: white;
+}
+.rem{
+	margin-left: -30px;
+	margin-top: -8px;
+}
+.btn{
+	margin-left:30px;
+	height:35px;
+	width:80px;
+	margin-top: 4px;
 }

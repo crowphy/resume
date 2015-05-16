@@ -201,6 +201,7 @@
 	z-index: 100;
 	font: 40px "Microsoft Yahei";
 	color: #FFFFFF;
+	position: absolute;
 }
 .end_word{
 	font: 28px "Microsoft Yahei";

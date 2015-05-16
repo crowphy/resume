@@ -9,10 +9,10 @@ window.addEventListener("load",function(){
 	canvas.height=$(window).height();
     cw=parseInt(canvas.width/4);
     ch=parseInt(canvas.height/4)-30;
-    console.log(canvas.width)
+    //console.log(canvas.width)
     cxt.translate(cw/2+10,ch/2+10);
     drawWatch();
-    console.log(cw);
+    //console.log(cw);
 },false);
 	function drawWatch(){
 

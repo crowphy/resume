@@ -4,12 +4,13 @@ function check(){
 	if(key==13)
 	bt.click();
 }
+
+var name,password;
 function resume()
 {
-
-var num=$('#password').val();
-console.log(num);
-if(num==654321)
+name=$('#name').val();
+password=$('#password').val();
+if(name="crowphy" && password==654321)
 {
 	window.location.href='html/resume.html';
 }
@@ -18,8 +19,28 @@ else
 	alert("密码错误！")
 }
 }
+$(document).ready(function(){
+    if ($.cookie("rempwd")=="true") {
+        $("#rempwd").attr("rempwd",true);
+        $("#name").val($.cookie("name"));
+        $("#password").val($.cookie("password"));
 
-
+    }
+});
+function setCookie(){
+    var check=document.getElementById("rempwd").checked
+    if (check==true) {
+        name=$("#name").val();
+        password=$("#password").val();
+        console.log(name+"er"+password);
+        $.cookie("rempwd","true",{expires:1});
+        $.cookie("name",name,{expires:1});
+        $.cookie("password",password,{expires:1})
+    }
+}
+function test(){
+    console.log(document.getElementById("rempwd").checked)
+}
 var canvas,cxt;
 
 var w;
@@ -52,7 +73,7 @@ window.onload=function(){
     gameLoop();
     
     function gameLoop() {
-        window.setTimeout(gameLoop,100);
+        window.setTimeout(gameLoop,150);
         drawSky(cxt);
         fillMoon(cxt,2,1000,100,60,20);
         drawLand(cxt);
@@ -61,51 +82,18 @@ window.onload=function(){
     
     function drawSky(cxt)
     {
+        for(var i=0;i<5;i++){
     	cxt.save();
 	    var skyColor=cxt.createLinearGradient(0,canvas.height,0,0);
 	    skyColor.addColorStop(1,'rgba(52,30,80,1)');
         skyColor.addColorStop(0.4,'rgba(53,63,120,0.8)');
 	    skyColor.addColorStop(0,'rgba(108,77,94,1)');
 	    cxt.fillStyle=skyColor;
-	    cxt.fillStyle=skyColor;
 	    cxt.fillRect(0,0,canvas.width,canvas.height);
 	    cxt.restore();
-    }
-    /*
-    function drawStars(){
-        
-        for(var i=0;i<80;i++)
-        {
-            var x=Math.random()*canvas.width;
-            var y=Math.random()*canvas.height-0.4*canvas.height;
-        	var outerR=Math.random()*4+5;
-        	var innerR=0.5*outerR;
-        	var rot=Math.random()*360;
-        	drawStar(context,x,y,outerR,innerR,rot);
         }
-        
-
     }
-    function drawStar(cxt,x,y,outerR,innerR,rot)
-    {   
-    	cxt.save();
-    	cxt.beginPath()
-    	for(var i=0;i<5;i++)
-    	{
-    		cxt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*outerR+x,-Math.sin((18+i*72-rot)/180*Math.PI)*outerR+y);
-    		cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*innerR+x,-Math.sin((54+i*72-rot)/180*Math.PI)*innerR+y);
-    	}
-    	cxt.closePath();
-        
-        
-    	cxt.fillStyle="#FFFF00";
-    	cxt.strokeStyle="#FFFF80";
-    	cxt.stroke();
-    	cxt.fill();
-        cxt.restore();
-        //window.requestAnimationFrame(drawStar);
-    }
-    */
+    
     function fillMoon(cxt,d,x,y,R,rot)
     {
     	cxt.save();
