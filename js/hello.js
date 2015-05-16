@@ -35,7 +35,12 @@ function setCookie(){
         console.log(name+"er"+password);
         $.cookie("rempwd","true",{expires:1});
         $.cookie("name",name,{expires:1});
-        $.cookie("password",password,{expires:1})
+        $.cookie("password",password,{expires:1});
+    }
+    else{
+        $.cookie("rempwd","false",{expires:-1});
+        $.cookie("name",name,{expires:-1});
+        $.cookie("password",password,{expires:-1});
     }
 }
 function test(){

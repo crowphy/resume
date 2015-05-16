@@ -100,7 +100,6 @@ window.onload=function(){
 	canvas.height=$(window).height();
 	w=canvas.width;
 	h=canvas.height;
-	//cxt.translate(w/2+10,h/2+10);
 	loop();
 	
 	function loop(){
@@ -131,25 +130,19 @@ window.onload=function(){
 		cxt.clearRect(0,0,1000,800);
 		var color=["#A74FFF","#FF8C55","#FEDD23","#A0FF53","#3997FF","#FF8C55"];
 		for(var i=0;i<5;i++){
-			//var fillColor="#8080FF";
 			j=j+1;
 			
 			k=(j)%6;
 
-			//cxt.save();
 	        cxt.beginPath();
 	        cxt.moveTo(650,300);
 	        cxt.lineTo(650+Math.cos((18+72*i)/180*Math.PI)*250,300-Math.sin((18+72*i)/180*Math.PI)*250);
             cxt.arc(650,300,250,(1.9-0.4*i)*Math.PI,(1.5-0.4*i)*Math.PI,true);
             cxt.lineTo(650,300);
 			cxt.closePath();
-			//cxt.strokeStyle=color[k];
 			cxt.fillStyle=color[k];
 			cxt.stroke();
 			cxt.fill();            
-			//cxt.restore();
-
-
 		}
 	}
 		
