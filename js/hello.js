@@ -28,6 +28,7 @@ $(document).ready(function(){
     }
 });
 function setCookie(){
+    console.log(document.getElementById("rempwd").checked)
     var check=document.getElementById("rempwd").checked
     if (check==true) {
         name=$("#name").val();
