@@ -28,12 +28,10 @@ $(document).ready(function(){
     }
 });
 function setCookie(){
-    console.log(document.getElementById("rempwd").checked)
     var check=document.getElementById("rempwd").checked
     if (check==true) {
         name=$("#name").val();
         password=$("#password").val();
-        console.log(name+"er"+password);
         $.cookie("rempwd","true",{expires:1});
         $.cookie("name",name,{expires:1});
         $.cookie("password",password,{expires:1});
@@ -44,9 +42,7 @@ function setCookie(){
         $.cookie("password",password,{expires:-1});
     }
 }
-function test(){
-    console.log(document.getElementById("rempwd").checked)
-}
+
 var canvas,cxt;
 
 var w;
