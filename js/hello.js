@@ -19,14 +19,16 @@ else
 	alert("密码错误！")
 }
 }
+
 $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
-        $("#rempwd").attr("rempwd",true);
+        $("#rempwd").attr("checked","true");
         $("#name").val($.cookie("name"));
         $("#password").val($.cookie("password"));
 
     }
 });
+
 function setCookie(){
     var check=document.getElementById("rempwd").checked
     if (check==true) {
@@ -64,7 +66,7 @@ window.onload=function(){
     h=canvas.height;
 
     starPic.src = "images/star.png";
-    //console.log(starPic);
+
     for (var i = 0; i < num; i++) {
         stars[i] = new star();
         stars[i].init();
