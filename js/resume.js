@@ -148,11 +148,10 @@ window.onload=function(){
 			cxt.stroke();
 			cxt.fill();            
 			//cxt.restore();
-			console.log(color[k]+' '+(j))
+
 
 		}
-		console.log("----------")
 	}
-
 		
 }
+
