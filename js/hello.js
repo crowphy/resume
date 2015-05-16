@@ -22,7 +22,7 @@ else
 
 $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
-        $("#rempwd").attr("checked","true");
+        $("#rempwd").attr("checked",true);
         $("#name").val($.cookie("name"));
         $("#password").val($.cookie("password"));
 
