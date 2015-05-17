@@ -8,7 +8,7 @@
     	canvas.height=$(window).height();
         cw=parseInt(canvas.width/4);
         ch=parseInt(canvas.height/4)-30;
-        console.log(ch)
+        //console.log(ch)
         cxt.translate(cw/2+10,ch/2+10);
         drawWatch();
         //console.log(cw);

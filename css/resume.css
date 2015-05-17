@@ -105,9 +105,8 @@
 	position: relative;
 }
 #circle{
-	margin-top: -320px;
 	z-index:1;
-	position: absolute;
+	position: relative;
 }
 .basic{
 	position: relative;  
@@ -200,7 +199,6 @@
 	margin-left: 100px;
 	position: absolute;
 	margin-top: -70px;
-	#margin-bottom: 50px;
 }
 .thanks{
 	font: 50px "Microsoft Yahei";
