@@ -106,8 +106,9 @@
 }
 #circle{
 	z-index:1;
-	position: absolute;
-	margin-top: -28%;
+	position: relative;
+}
+.char{
 
 }
 .basic{
@@ -191,7 +192,7 @@
 	
 }
 .character a{
-	z-index: 100;
+	z-index: 10;
 	font: 40px "Microsoft Yahei";
 	color: #FFFFFF;
 	position: absolute;
