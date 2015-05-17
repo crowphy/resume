@@ -1,19 +1,18 @@
-var canvas,cxt;
-var cw,ch;
-
 (function(){
-window.addEventListener("load",function(){
-	var canvas=document.getElementById("watch");
-	cxt=canvas.getContext("2d");
-	canvas.width=$(window).width();
-	canvas.height=$(window).height();
-    cw=parseInt(canvas.width/4);
-    ch=parseInt(canvas.height/4)-30;
-    //console.log(canvas.width)
-    cxt.translate(cw/2+10,ch/2+10);
-    drawWatch();
-    //console.log(cw);
-},false);
+    var canvas,cxt;
+    var cw,ch;
+    window.addEventListener("load",function(){
+    	var canvas=document.getElementById("watch");
+    	cxt=canvas.getContext("2d");
+    	canvas.width=$(window).width();
+    	canvas.height=$(window).height();
+        cw=parseInt(canvas.width/4);
+        ch=parseInt(canvas.height/4)-30;
+        console.log(ch)
+        cxt.translate(cw/2+10,ch/2+10);
+        drawWatch();
+        //console.log(cw);
+    },false);
 	function drawWatch(){
 
         cxt.clearRect(-cw / 2,- ch / 2-20,cw+20,ch+20);
@@ -52,7 +51,7 @@ window.addEventListener("load",function(){
         var sColor="#E9296C";
         drawHand(cxt,sAngle,sLen,sWidth,sColor);
 
-        setTimeout(drawWatch,500);
+        setTimeout(drawWatch,1000);
     }
 
     function drawHand(cxt,angle,length,width,color){
