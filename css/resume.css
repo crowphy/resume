@@ -106,7 +106,9 @@
 }
 #circle{
 	z-index:1;
-	position: relative;
+	position: absolute;
+	margin-top: -28%;
+
 }
 .basic{
 	position: relative;  
