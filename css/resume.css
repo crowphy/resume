@@ -81,8 +81,8 @@
 }
 .screen-main .welcome{
 	position: absolute;
-	margin-top: 350px;
-	margin-left: 550px;
+	margin-top: 29%;
+	margin-left: 43%;
 	font-size: 25px;
 	display: none;
 }
@@ -102,7 +102,7 @@
 	margin-left:380px;
 	margin-top:150px;
 	display:block;
-	position: relative;
+	position: absolute;
 }
 #circle{
 	z-index:1;
