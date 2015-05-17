@@ -8,7 +8,7 @@ $(document).ready(function() {
 				var $rel = $(this).attr('rel');
 				var $arr = $rel.split(',');
 				$(this).animate({
-					left: ($arr[2]/12.8) + "%",
+					left: ($arr[2]/13.6) + "%",
 					top: ($arr[3]/8) + '%'
 				}, 2000);
 			});
@@ -18,7 +18,7 @@ $(document).ready(function() {
 				var $arr = $rel.split(',');
 				//console.log($arr[0])
 				$(this).animate({
-					left: ($arr[0]/12.8) + '%',
+					left: ($arr[0]/13.6) + '%',
 					top: ($arr[1]/8) + '%'
 				},0);
 			});
@@ -31,7 +31,7 @@ $(document).ready(function() {
 					var $rel = $(this).attr('rel');
 					var $arr = $rel.split(',');
 					$(this).animate({
-						left: ($arr[2]/12.8) + "%",
+						left: ($arr[2]/13.6) + "%",
 						top: ($arr[3]/8) + '%'
 					}, 2000);
 				});
@@ -44,7 +44,7 @@ $(document).ready(function() {
 					var $rel = $(this).attr('rel');
 					var $arr = $rel.split(',');
 					$(this).animate({
-						left: ($arr[2]/12.8) + "%",
+						left: ($arr[2]/13.6) + "%",
 						top: ($arr[3]/8) + '%'
 					}, 1000);
 				});		
@@ -59,7 +59,7 @@ $(document).ready(function() {
 					var $rel = $(this).attr('rel');
 					var $arr = $rel.split(',');
 					$(this).animate({
-						left: ($arr[0]/12.8) + '%',
+						left: ($arr[0]/13.6) + '%',
 						top: ($arr[1]/8) + '%'
 					}, 2000);
 				});
@@ -70,7 +70,7 @@ $(document).ready(function() {
 					var $rel = $(this).attr('rel');
 					var $arr = $rel.split(',');
 					$(this).animate({
-						left: ($arr[0]/12.8) + '%',
+						left: ($arr[0]/13.6) + '%',
 						top: ($arr[1]/8) + '%'
 					}, 1000);
 				});
