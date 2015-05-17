@@ -109,7 +109,6 @@ window.onload=function(){
 	    drawCircle();
 	    a=a+1;
 	    cnt=cnt+a;
-	    console.log(cnt)
 	    if (cnt<=500) {
 	    	t=setTimeout(loop,cnt);
 	    }
