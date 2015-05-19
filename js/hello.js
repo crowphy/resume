@@ -26,11 +26,11 @@ $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
         var name=document.forms[0]["name"].value;
         var password=document.forms[0]["password"].value;
-        var rem=document.forms[0]["rempwd"].value;
+        var rem=document.forms[0]["rempwd"].checked;
         
         name=$.cookie("name");
         password=$.cookie("password");
-        rem.setAttribute("checked",true);
+        rem=true;
     }
 });
 
