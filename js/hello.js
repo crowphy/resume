@@ -8,15 +8,15 @@ function check(){
 var name,password;
 function resume()
 {
-name=$('#name').val();
-password=$('#password').val();
-if(name="crowphy" && password=="654321")
-{
-	window.location.href='html/resume.html';
-}
-else
-{
-	alert("密码错误！")
+    name=document.forms[0]["name"].value;
+    password=document.forms[0]["password"].value;
+    if(name="crowphy" && password=="654321")
+    {
+    	window.location.href='html/resume.html';
+    }
+    else
+    {
+    	alert("密码错误！")
 }
 }
 
