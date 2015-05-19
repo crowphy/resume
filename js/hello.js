@@ -13,7 +13,7 @@ function resume()
     console.log(password);
     if(name="crowphy" && password==654321)
     {
-    	window.location.href='html/resume.html';
+    	window.location.href="html/resume.html";
     }
     else
     {
@@ -23,30 +23,29 @@ function resume()
 
 
 
-// $(document).ready(function(){
-//     if ($.cookie("rempwd")=="true") {
-//         document.forms[0]["name"].value=$.cookie("name");
-//         document.forms[0]["password"].value=$.cookie("password");
-//         //document.forms[0]["rempwd"].checked=true;
-//     }
-// });
+$(document).ready(function(){
+    if ($.cookie("rempwd")=="true") {
+        document.forms[0]["name"].value=$.cookie("name");
+        document.forms[0]["password"].value=$.cookie("password");
+        document.forms[0]["rempwd"].checked=true;
+    }
+});
 
-// function setCookie(){
-//     var check=document.forms[0]["rempwd"].checked;
-//     console.log(check)
-//     if (check==true) {
-//         name=document.forms[0]["name"].value;
-//         password=document.forms[0]["password"].value;
-//         $.cookie("rempwd","true",{expires:1,path:"/"});
-//         $.cookie("name",name,{expires:1,path:"/"});
-//         $.cookie("password",password,{expires:1,path:"/"});
-//     }
-//     else{
-//         $.cookie("rempwd","false",{expires:-1,path:"/"});
-//         $.cookie("name",name,{expires:-1,path:"/"});
-//         $.cookie("password",password,{expires:-1,path:"/"});
-//     }
-// }
+function setCookie(){
+    var check=document.forms[0]["rempwd"].checked;
+    if (check==true) {
+        name=document.forms[0]["name"].value;
+        password=document.forms[0]["password"].value;
+        $.cookie("rempwd","true",{expires:1,path:"/"});
+        $.cookie("name",name,{expires:1,path:"/"});
+        $.cookie("password",password,{expires:1,path:"/"});
+    }
+    else{
+        $.cookie("rempwd","false",{expires:-1,path:"/"});
+        $.cookie("name",name,{expires:-1,path:"/"});
+        $.cookie("password",password,{expires:-1,path:"/"});
+    }
+}
 
 var canvas,cxt;
 
