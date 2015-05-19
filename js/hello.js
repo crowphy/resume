@@ -40,7 +40,7 @@ function setCookie(){
     }
     else{
         $.cookie("rempwd","false",{expires:-1,path:"/"});
-        $.cookie("name",name,{expires:-1,path:"/"}});
+        $.cookie("name",name,{expires:-1,path:"/"});
         $.cookie("password",password,{expires:-1,path:"/"});
     }
 }
