@@ -20,20 +20,25 @@ else
 }
 }
 
+
+
 $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
-        $("#rempwd").attr("checked",true);
-        $("#name").val($.cookie("name"));
-        $("#password").val($.cookie("password"));
-
+        var name=document.forms["name"].value;
+        var password=document.forms["password"].value;
+        var rem=document.forms["rempwd"].value;
+        
+        name=$.cookie("name");
+        password=$.cookie("password");
+        rem.setAttribute("checked",true);
     }
 });
 
 function setCookie(){
     var check=document.getElementById("rempwd").checked
     if (check==true) {
-        name=$("#name").val();
-        password=$("#password").val();
+        name=name=document.forms["name"].value;
+        password=document.forms["password"].value;
         $.cookie("rempwd","true",{expires:1,path:"/"});
         $.cookie("name",name,{expires:1,path:"/"});
         $.cookie("password",password,{expires:1,path:"/"});
