@@ -24,11 +24,8 @@ else
 
 $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
-        var name=document.forms[0]["name"].value;
-        var password=document.forms[0]["password"].value;
-        
-        name=$.cookie("name");
-        password=$.cookie("password");
+        document.forms[0]["name"].value=$.cookie("name");
+        document.forms[0]["password"].value=$.cookie("password");
         document.forms[0]["rempwd"].checked=true;
     }
 });
@@ -36,7 +33,7 @@ $(document).ready(function(){
 function setCookie(){
     var check=document.forms[0]["rempwd"].checked;
     if (check==true) {
-        name=name=document.forms[0]["name"].value;
+        name=document.forms[0]["name"].value;
         password=document.forms[0]["password"].value;
         $.cookie("rempwd","true",{expires:1,path:"/"});
         $.cookie("name",name,{expires:1,path:"/"});
