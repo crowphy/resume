@@ -24,9 +24,9 @@ else
 
 $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
-        var name=document.forms["name"].value;
-        var password=document.forms["password"].value;
-        var rem=document.forms["rempwd"].value;
+        var name=document.forms[0]["name"].value;
+        var password=document.forms[0]["password"].value;
+        var rem=document.forms[0]["rempwd"].value;
         
         name=$.cookie("name");
         password=$.cookie("password");
@@ -37,8 +37,8 @@ $(document).ready(function(){
 function setCookie(){
     var check=document.getElementById("rempwd").checked
     if (check==true) {
-        name=name=document.forms["name"].value;
-        password=document.forms["password"].value;
+        name=name=document.forms[0]["name"].value;
+        password=document.forms[0]["password"].value;
         $.cookie("rempwd","true",{expires:1,path:"/"});
         $.cookie("name",name,{expires:1,path:"/"});
         $.cookie("password",password,{expires:1,path:"/"});
