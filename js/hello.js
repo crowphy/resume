@@ -29,12 +29,12 @@ $(document).ready(function(){
         
         name=$.cookie("name");
         password=$.cookie("password");
-        //document.forms[0]["rempwd"].checked=true;
+        document.forms[0]["rempwd"].checked=true;
     }
 });
 
 function setCookie(){
-    var check=document.getElementById("rempwd").checked
+    var check=document.getElementById("rempwd").checked;
     if (check==true) {
         name=name=document.forms[0]["name"].value;
         password=document.forms[0]["password"].value;
