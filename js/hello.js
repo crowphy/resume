@@ -26,7 +26,7 @@ $(document).ready(function(){
     if ($.cookie("rempwd")=="true") {
         document.forms[0]["name"].value=$.cookie("name");
         document.forms[0]["password"].value=$.cookie("password");
-        document.forms[0]["rempwd"].checked=true;
+        //document.forms[0]["rempwd"].checked=true;
     }
 });
 
