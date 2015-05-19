@@ -10,7 +10,7 @@ function resume()
 {
     name=document.forms[0]["name"].value;
     password=document.forms[0]["password"].value;
-    if(name="crowphy" && password=="654321")
+    if(name="crowphy" && password==654321)
     {
     	window.location.href='html/resume.html';
     }
