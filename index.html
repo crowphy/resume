@@ -11,22 +11,23 @@
 </head>
 
 <body>
-	<form class="confirm">
-    <div>
-      <span class="title">用&nbsp户&nbsp名：</span>
-      <input name="name" class="user" type="text" placeholder="crowphy">
+	<div class="confirm">
+        <form>
+            <div>
+                <span class="title">用&nbsp户&nbsp名：</span>
+                <input name="name" class="user" type="text" placeholder="crowphy">
+            </div>
+            <div>
+          	     <span class="title" >密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码：</sapn>
+          		 <input name="password" class="user" type="password" onkeypress="check()" placeholder="654321">
+            </div>
+            <div class="rem">
+                <input name="rempwd" onclick="setCookie()"   type="checkbox">
+                <span class="" >记住密码</sapn>
+            </div>
+        </form>
+        <button class="btn btn-info" id="bt"  onclick="resume()">确   认</button>
     </div>
-    <div>
-  	  <span class="title" >密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码：</sapn>
-  		<input name="password" class="user" type="password" onkeypress="check()" placeholder="654321">
-    </div>
-    <div class="rem">
-      <input name="rempwd" onclick="setCookie()"   type="checkbox">
-      <span class="" >记住密码</sapn>
-    </div>
-	</form>
-  <button class="btn btn-info" id="bt"  onclick="resume()">确   认</button>
-
 	<canvas id="background"></canvas>
 </body>
 </html>
