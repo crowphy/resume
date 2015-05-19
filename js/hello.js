@@ -34,14 +34,14 @@ function setCookie(){
     if (check==true) {
         name=$("#name").val();
         password=$("#password").val();
-        $.cookie("rempwd","true",{expires:1});
-        $.cookie("name",name,{expires:1});
-        $.cookie("password",password,{expires:1});
+        $.cookie("rempwd","true",{expires:1,path:"/"});
+        $.cookie("name",name,{expires:1,path:"/"});
+        $.cookie("password",password,{expires:1,path:"/"});
     }
     else{
-        $.cookie("rempwd","false",{expires:-1});
-        $.cookie("name",name,{expires:-1});
-        $.cookie("password",password,{expires:-1});
+        $.cookie("rempwd","false",{expires:-1,path:"/"});
+        $.cookie("name",name,{expires:-1,path:"/"}});
+        $.cookie("password",password,{expires:-1,path:"/"});
     }
 }
 
