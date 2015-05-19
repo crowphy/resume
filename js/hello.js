@@ -10,7 +10,7 @@ function resume()
 {
 name=$('#name').val();
 password=$('#password').val();
-if(name="crowphy" && password==654321)
+if(name="crowphy" && password=="654321")
 {
 	window.location.href='html/resume.html';
 }
