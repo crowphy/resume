@@ -34,7 +34,7 @@ $(document).ready(function(){
 });
 
 function setCookie(){
-    var check=document.getElementById("rempwd").checked;
+    var check=document.forms[0]["rempwd"].checked;
     if (check==true) {
         name=name=document.forms[0]["name"].value;
         password=document.forms[0]["password"].value;
