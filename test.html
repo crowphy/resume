@@ -1,34 +1,107 @@
 <html>
 <head>
-<script>
-    $(document).ready(function(){
-        if ($.cookie("rempwd")=="true") {
-            var rem=document.forms[0]["name"].value;
-            $("#rempwd").attr("checked",true);
-            $("#name").val($.cookie("name"));
-            $("#password").val($.cookie("password"));
+<meta charset="utf-8">
+<style>
+.btn-select { 
+    position: relative; 
+    display: inline-block; 
+    background-color: #fff; 
+    color: black;
+    top: -15px;
+    padding-right: 10px;
+    margin-top: 20px;
+} 
+.btn-select .cur-select { 
+    position: absolute; 
+    display: block; 
+    width: 189px; 
+    height: 20px; 
+    line-height: 20px; 
+    background:url("../../img/arrows.png") white no-repeat 174px center; 
+    text-indent: 10px; 
+    border:#CCCCCC 1px solid;
+    border-radius: 1px;
+} 
+.btn-select select { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 188px; 
+    height: 20px; 
+    opacity: 0; 
+    filter: alpha(opacity: 0;);
+    color: black; 
+}
+</style>
 
-        }
-    });
-
-    function setCookie(){
-        var check=document.getElementById("rempwd").checked;
-        if (check==true) {
-            name=$("#name").val();
-            password=$("#password").val();
-            $.cookie("rempwd","true",{expires:1,path:"/"});
-            $.cookie("name",name,{expires:1,path:"/"});
-            $.cookie("password",password,{expires:1,path:"/"});
-        }
-        else{
-            $.cookie("rempwd","false",{expires:-1,path:"/"});
-            $.cookie("name",name,{expires:-1,path:"/"});
-            $.cookie("password",password,{expires:-1,path:"/"});
-        }
-    }
-</script>
 </head>
 
-<body onLoad="checkCookie()">
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="goodbye">
+    Goodbye
+    <div class="hello">Hello</div>
+  </div>
+</div>
+<script>
+$('.hello').clone().appendTo('.hello');
+$("#term-2").nextUntil("dt")
+  .css("background-color", "red");
+ 
+var term3 = document.getElementById("term-3");
+$("#term-1").nextUntil(term3, "dd")
+  .css("color", "green");
+ 
+</script>
+ 
 </body>
 </html>
+</body>
+</html>
+<script src="lib/js/jquery-2.1.1.min.js"></script>
+<script>
+    $(".op-select").data("blah", "hello");
+    console.log($("op-select").data("blah"));
+    (function () {        
+        $(".op-select").each(function(index){
+            //console.log(index);
+            console.log($(this).size())
+        $(this)[0].onchange = function () {
+            var selected=$(this); 
+            selected.prev()[0].innerHTML = selected[0].options[selected[0].selectedIndex].text; 
+            }
+        })
+    })();
+    // $(document).ready(function(){
+    //     if ($.cookie("rempwd")=="true") {
+    //         var rem=document.forms[0]["name"].value;
+    //         $("#rempwd").attr("checked",true);
+    //         $("#name").val($.cookie("name"));
+    //         $("#password").val($.cookie("password"));
+
+    //     }
+    // });
+
+    // function setCookie(){
+    //     var check=document.getElementById("rempwd").checked;
+    //     if (check==true) {
+    //         name=$("#name").val();
+    //         password=$("#password").val();
+    //         $.cookie("rempwd","true",{expires:1,path:"/"});
+    //         $.cookie("name",name,{expires:1,path:"/"});
+    //         $.cookie("password",password,{expires:1,path:"/"});
+    //     }
+    //     else{
+    //         $.cookie("rempwd","false",{expires:-1,path:"/"});
+    //         $.cookie("name",name,{expires:-1,path:"/"});
+    //         $.cookie("password",password,{expires:-1,path:"/"});
+    //     }
+    // }
+</script>
+    
