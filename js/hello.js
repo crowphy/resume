@@ -17,7 +17,6 @@ var name,password;
 $("#bt").on("click",function () {
     name=document.forms[0]["name"].value;
     password=document.forms[0]["password"].value;
-    console.log(password);
     if(name="crowphy" && password==654321)
     {
     	window.location.href="html/resume.html";
