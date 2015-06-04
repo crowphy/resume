@@ -32,9 +32,9 @@ $("#rem").on("click",function () {
     if (check==true) {
         name=document.forms[0]["name"].value;
         password=document.forms[0]["password"].value;
-        $.cookie("rempwd","true",{expires:100,path:"/"});
         $.cookie("name",name,{expires:100,path:"/"});
         $.cookie("password",password,{expires:100,path:"/"});
+        $.cookie("rempwd","true",{expires:100,path:"/"});
     }
     else{
         $.cookie("rempwd",{expires:-1,path:"/"});
