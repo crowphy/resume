@@ -1,17 +1,11 @@
 $(document).ready(function(){
-    if ($.cookie("rempwd")=="true") {
-        document.forms[0]["name"].value=$.cookie("name");
-        document.forms[0]["password"].value=$.cookie("password");
-        document.forms[0]["rempwd"].checked=true;
+    if ($.cookie("rempwd") == "true") {
+        document.forms[0]["name"].value = $.cookie("name");
+        document.forms[0]["password"].value = $.cookie("password");
+        document.forms[0]["rempwd"].checked = true;
     }
 });
 
-$("#press").on("keypress",function () {
-	var bt=document.getElementById("bt");
-	var key=event.keyCode;
-	if(key==13)
-	bt.click();
-})
 
 var name,password;
 $("#bt").on("click",function () {
@@ -19,7 +13,7 @@ $("#bt").on("click",function () {
     password=document.forms[0]["password"].value;
     if(name="crowphy" && password==654321)
     {
-    	window.location.href="html/resume.html";
+    	location.href="html/resume.html";
     }
     else
     {
@@ -28,19 +22,28 @@ $("#bt").on("click",function () {
 })
 
 $("#rem").on("click",function () {
-    var check=document.forms[0]["rempwd"].checked;
-    if (check==true) {
-        name=document.forms[0]["name"].value;
-        password=document.forms[0]["password"].value;
-        $.cookie("rempwd","true",{expires:100,path:"/"});
-        $.cookie("name",name,{expires:100,path:"/"});
-        $.cookie("password",password,{expires:100,path:"/"});
+    var check = document.forms[0]["rempwd"].checked;
+    if (check == true) {
+        name = document.forms[0]["name"].value;
+        password = document.forms[0]["password"].value;
+        $.cookie("name",name,{expires:100});
+        $.cookie("password",password,{expires:100});
+        $.cookie("rempwd","true",{expires:100});
+        //console.log($.cookie("password"))
     }
     else{
-        $.cookie("rempwd",{expires:-1,path:"/"});
+        $.cookie("password",{expires:-1})
+        $.cookie("rempwd",{expires:-1});
+        //console.log($.cookie("rempwd"))
     }
 })
 
+$("#press").on("keypress",function () {
+    var bt=document.getElementById("bt");
+    var key=event.keyCode;
+    if(key==13)
+    bt.click();
+})
 var canvas,cxt;
 var w;
 var h;
